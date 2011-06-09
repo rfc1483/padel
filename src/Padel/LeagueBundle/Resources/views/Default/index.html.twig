@@ -1,0 +1,12 @@
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+
+{% block content %}
+    <h1>Menu</h1>
+    <ul id="demo-list">
+        <li><a href="{{ path('login') }}">Login</a></li>
+        <li><a href="{{ path('register') }}">Register</a></li>
+    </ul>
+{% endblock %}

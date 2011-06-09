@@ -1,0 +1,4 @@
+Padel\LeagueBundle\Entity\Users:
+  properties:
+    username:
+      - NotBlank: ~

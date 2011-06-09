@@ -1,0 +1,20 @@
+{% extends 'PadelLeagueBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <form action="{{ path('register') }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_errors(form) }}
+        <div>
+            {{ form_label(form.username) }}
+            {{ form_errors(form.username) }}
+            {{ form_widget(form.username) }}
+        </div>
+        {{ form_rest(form) }}
+
+        <input type="submit" class="symfony-button-grey" value="REGISTER" />
+    </form>
+
+{% endblock %}
+
+{% set code = code(_self) %}

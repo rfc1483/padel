@@ -1,0 +1,20 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: PadelLeagueBundle:Default:index }
+
+
+register:
+  pattern: /register/
+  defaults: { _controller: PadelLeagueBundle:Default:register }
+  
+login:
+  pattern: /login/
+  defaults: { _controller: PadelLeagueBundle:Default:login }
+
+logout:
+  pattern: /logout
+
+login_check:
+  pattern: /login_check
+  
+
