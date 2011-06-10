@@ -5,6 +5,26 @@
         <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" type="text/css" media="all" />
         <title>{% block title %}Demo Bundle{% endblock %}</title>
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+                <script type="text/javascript" src=" {{ asset('bundles/padelleague/js/jquery-1.6.1.js') }}"></script> 
+        <script type="text/javascript" src=" {{ asset('bundles/padelleague/js/jquery.tablesorter.js') }}"></script> 
+        <script type="text/javascript">
+            $(document).ready(function() 
+            { 
+                $("#tablesorter-demo").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
+                $("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
+            }           
+        ); 
+            $(document).ready(function()
+            {
+                $("tr").click(function(){
+                    window.location = $(this).attr("url");
+               });
+              
+                $('tr').css( 'cursor', 'pointer' );
+            });
+
+        </script>
+        <link href="{{ asset('bundles/padelleague/css/style.css') }}" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="symfony-wrapper">

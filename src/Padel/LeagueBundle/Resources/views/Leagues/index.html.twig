@@ -1,0 +1,31 @@
+{% extends "PadelLeagueBundle:Leagues:layout.html.twig" %}
+
+{% block content %}
+    <h1>Leagues</h1>
+    <table id="tablesorter-demo" class="tablesorter"> 
+        <thead> 
+            <tr> 
+                <th>Name</th> 
+                <th>Year</th> 
+                <th>Status</th> 
+            </tr> 
+        </thead> 
+        <tbody> 
+            {% for league in leagues %}
+                <tr url="../league_manager/{{league.id}}">
+                    <td>{{ league.name }}</td>
+                    <td>{{ league.year }}</td>
+                    <td>{{ league.status }}</td>
+                </tr>
+            {% endfor %}            
+        </tbody> 
+    </table> 
+    {{ error }}
+    <br />
+    <br />
+    <ul id="demo-list">
+        <a href={{ path('create_league') }}>Create League</a> 
+    </ul>
+{% endblock %}
+
+{% set code = code(_self) %}

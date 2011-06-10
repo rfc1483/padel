@@ -40,6 +40,54 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::registerAction',  '_route' => 'register',);
         }
 
+        // classification
+        if (rtrim($pathinfo, '/') === '/classification') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'classification');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::classificationAction',  '_route' => 'classification',);
+        }
+
+        // outcome
+        if (rtrim($pathinfo, '/') === '/outcome') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'outcome');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::outcomeAction',  '_route' => 'outcome',);
+        }
+
+        // teams
+        if (rtrim($pathinfo, '/') === '/teams') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'teams');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::teamsAction',  '_route' => 'teams',);
+        }
+
+        // leagues
+        if (rtrim($pathinfo, '/') === '/leagues') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'leagues');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::indexAction',  '_route' => 'leagues',);
+        }
+
+        // league_manager
+        if (0 === strpos($pathinfo, '/league_manager') && preg_match('#^/league_manager/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'league_manager');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::managerAction',)), array('_route' => 'league_manager'));
+        }
+
+        // create_league
+        if (rtrim($pathinfo, '/') === '/create_league') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'create_league');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::createAction',  '_route' => 'create_league',);
+        }
+
         // login
         if (rtrim($pathinfo, '/') === '/login') {
             if (substr($pathinfo, -1) !== '/') {

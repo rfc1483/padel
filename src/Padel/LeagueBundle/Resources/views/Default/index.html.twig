@@ -2,11 +2,21 @@
 
 {% block title "Symfony - Demos" %}
 
-
 {% block content %}
     <h1>Menu</h1>
     <ul id="demo-list">
-        <li><a href="{{ path('login') }}">Login</a></li>
-        <li><a href="{{ path('register') }}">Register</a></li>
+        {% if is_granted('ROLE_USER') %}
+            <li><a href="{{ path('classification') }}">Classification</a></li>
+            <li><a href="{{ path('outcome') }}">Send outcome</a></li>
+        {% elseif is_granted('ROLE_ADMIN') %}
+            <li><a href="{{ path('classification') }}">Classification</a></li>
+            <li><a href="{{ path('teams') }}">Teams</a></li>
+            <li><a href="{{ path('leagues') }}">Leagues</a></li>
+        {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+            <li><a href="{{ path('login') }}">Login</a></li>
+            <li><a href="{{ path('register') }}">Sign up</a></li>        
+        {% endif %}
     </ul>
 {% endblock %}
+    
+{% set code = code(_self) %}

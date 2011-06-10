@@ -15,6 +15,12 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     static private $declaredRouteNames = array(
        'homepage' => true,
        'register' => true,
+       'classification' => true,
+       'outcome' => true,
+       'teams' => true,
+       'leagues' => true,
+       'league_manager' => true,
+       'create_league' => true,
        'login' => true,
        'logout' => true,
        'login_check' => true,
@@ -69,6 +75,36 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getregisterRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::registerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/register/',  ),));
+    }
+
+    private function getclassificationRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::classificationAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/classification/',  ),));
+    }
+
+    private function getoutcomeRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::outcomeAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/outcome/',  ),));
+    }
+
+    private function getteamsRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::teamsAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/teams/',  ),));
+    }
+
+    private function getleaguesRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/leagues/',  ),));
+    }
+
+    private function getleague_managerRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::managerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/league_manager',  ),));
+    }
+
+    private function getcreate_leagueRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/create_league/',  ),));
     }
 
     private function getloginRouteInfo()

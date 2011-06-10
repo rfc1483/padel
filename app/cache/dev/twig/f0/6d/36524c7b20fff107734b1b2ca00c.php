@@ -37,13 +37,17 @@ class __TwigTemplate_f06d36524c7b20fff107734b1b2ca00c extends Twig_Template
         echo "    ";
         echo $this->renderParentBlock("content_header_more", $context, $blocks);
         echo "
-    <li>logged in as <strong>";
+    ";
         // line 5
-        echo twig_escape_filter($this->env, (($this->getAttribute($this->getContext($context, 'app'), "user", array(), "any", false)) ? ($this->getAttribute($this->getAttribute($this->getContext($context, 'app'), "user", array(), "any", false), "username", array(), "any", false)) : ("Anonymous")), "html");
-        echo "</strong> - <a href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("logout"), "html");
-        echo "\">Logout</a></li>
-";
+        if (($this->env->getExtension('security')->isGranted("ROLE_USER") || $this->env->getExtension('security')->isGranted("ROLE_ADMIN"))) {
+            // line 6
+            echo "        <li>logged in as <strong>";
+            echo twig_escape_filter($this->env, (($this->getAttribute($this->getContext($context, 'app'), "user", array(), "any", false)) ? ($this->getAttribute($this->getAttribute($this->getContext($context, 'app'), "user", array(), "any", false), "username", array(), "any", false)) : ("Anonymous")), "html");
+            echo "</strong> - <a href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("logout"), "html");
+            echo "\">Logout</a></li>
+    ";
+        }
     }
 
     public function getTemplateName()

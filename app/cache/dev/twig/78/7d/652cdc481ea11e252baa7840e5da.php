@@ -17,7 +17,7 @@ class __TwigTemplate_787d652cdc481ea11e252baa7840e5da extends Twig_Template
     public function getParent(array $context)
     {
         if (null === $this->parent) {
-            $this->parent = $this->env->loadTemplate("PadelLeagueBundle::layout.html.twig");
+            $this->parent = $this->env->loadTemplate("PadelLeagueBundle:Default:layout.html.twig");
         }
 
         return $this->parent;
@@ -36,7 +36,7 @@ class __TwigTemplate_787d652cdc481ea11e252baa7840e5da extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "    <h1>Register</h1>
+        echo "    <h1>Sign up</h1>
 
     <form action=\"";
         // line 6

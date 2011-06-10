@@ -1,7 +1,7 @@
-{% extends 'PadelLeagueBundle::layout.html.twig' %}
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
 
 {% block content %}
-    <h1>Register</h1>
+    <h1>Sign up</h1>
 
     <form action="{{ path('register') }}" method="post" {{ form_enctype(form) }} id="login">
         {{ form_errors(form) }}

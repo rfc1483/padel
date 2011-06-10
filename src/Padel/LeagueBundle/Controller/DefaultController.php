@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony framework.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace Padel\LeagueBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -52,7 +43,7 @@ class DefaultController extends Controller {
                 $manager = $this->get('doctrine')->getEntityManager();
                 $role = new Role();
                 $role = $manager->getRepository('PadelLeagueBundle:Role')->findOneByName('ROLE_USER');
-                
+
                 // Assign salt to the user
                 $user->setSalt(md5(time()));
 
@@ -72,6 +63,19 @@ class DefaultController extends Controller {
         return $this->render('PadelLeagueBundle:Default:register.html.twig', array(
             'form' => $form->createView()
         ));
+    }
+
+    public function classificationAction() {
+        return $this->render('PadelLeagueBundle:Default:classification.html.twig');
+    }
+
+    public function outcomeAction() {
+        return $this->render('PadelLeagueBundle:Default:outcome.html.twig');
+    }
+
+
+    public function teamsAction() {
+        return $this->render('PadelLeagueBundle:Default:teams.html.twig');
     }
 
 }

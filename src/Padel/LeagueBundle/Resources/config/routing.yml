@@ -6,7 +6,31 @@ homepage:
 register:
   pattern: /register/
   defaults: { _controller: PadelLeagueBundle:Default:register }
+
+classification:
+  pattern: /classification/
+  defaults: { _controller: PadelLeagueBundle:Default:classification }
+
+outcome:
+  pattern: /outcome/
+  defaults: { _controller: PadelLeagueBundle:Default:outcome }
+
+teams:
+  pattern: /teams/
+  defaults: { _controller: PadelLeagueBundle:Default:teams }
+
+leagues:
+  pattern: /leagues/
+  defaults: { _controller: PadelLeagueBundle:Leagues:index }
+
+league_manager:
+  pattern: /league_manager/{id}/
+  defaults: { _controller: PadelLeagueBundle:Leagues:manager }
   
+create_league:
+  pattern: /create_league/
+  defaults: { _controller: PadelLeagueBundle:Leagues:create }
+
 login:
   pattern: /login/
   defaults: { _controller: PadelLeagueBundle:Default:login }
@@ -16,5 +40,3 @@ logout:
 
 login_check:
   pattern: /login_check
-  
-
