@@ -2,25 +2,28 @@
 
 {% block content %}
     <h1>Leagues</h1>
-    <table id="tablesorter-demo" class="tablesorter"> 
-        <thead> 
-            <tr> 
-                <th>Name</th> 
-                <th>Year</th> 
-                <th>Status</th> 
-            </tr> 
-        </thead> 
-        <tbody> 
-            {% for league in leagues %}
-                <tr url="../league_manager/{{league.id}}">
-                    <td>{{ league.name }}</td>
-                    <td>{{ league.year }}</td>
-                    <td>{{ league.status }}</td>
-                </tr>
-            {% endfor %}            
-        </tbody> 
-    </table> 
-    {{ error }}
+    {% if error is empty %}
+        <table id="tablesorter-demo" class="tablesorter"> 
+            <thead> 
+                <tr> 
+                    <th>Name</th> 
+                    <th>Year</th> 
+                    <th>Status</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                {% for league in leagues %}               
+                    <tr url="{{ path('league_manager', { 'id': league.id } ) }}" >
+                        <td>{{ league.name }}</td>
+                        <td>{{ league.year }}</td>
+                        <td>{{ league.status }}</td>
+                    </tr>
+                {% endfor %}            
+            </tbody> 
+        </table> 
+    {% else %}
+        {{ error }}
+    {% endif %}
     <br />
     <br />
     <ul id="demo-list">

@@ -88,6 +88,22 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::createAction',  '_route' => 'create_league',);
         }
 
+        // delete_league
+        if (0 === strpos($pathinfo, '/delete_league') && preg_match('#^/delete_league/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'delete_league');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::deleteAction',)), array('_route' => 'delete_league'));
+        }
+
+        // create_stage
+        if (0 === strpos($pathinfo, '/create_stage') && preg_match('#^/create_stage/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'create_stage');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::createAction',)), array('_route' => 'create_stage'));
+        }
+
         // login
         if (rtrim($pathinfo, '/') === '/login') {
             if (substr($pathinfo, -1) !== '/') {

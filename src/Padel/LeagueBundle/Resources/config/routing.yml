@@ -2,7 +2,6 @@ homepage:
     pattern:  /
     defaults: { _controller: PadelLeagueBundle:Default:index }
 
-
 register:
   pattern: /register/
   defaults: { _controller: PadelLeagueBundle:Default:register }
@@ -30,6 +29,14 @@ league_manager:
 create_league:
   pattern: /create_league/
   defaults: { _controller: PadelLeagueBundle:Leagues:create }
+  
+delete_league:
+  pattern: /delete_league/{id}/
+  defaults: {_controller: PadelLeagueBundle:Leagues:delete }
+  
+create_stage:
+  pattern: /create_stage/{id}/
+  defaults: { _controller: PadelLeagueBundle:Stages:create }
 
 login:
   pattern: /login/

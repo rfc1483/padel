@@ -1,8 +1,13 @@
-{% extends "PadelLeagueBundle:Leagues:layout.html.twig" %}
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
 
 {% block content %}
-    <h1>Create league</h1>
-    League creation system.
+    <h1>New league</h1>
+
+    <form action="{{ path('create_league') }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_widget(form) }}
+        <input type="submit" class="symfony-button-grey" value="REGISTER" />
+    </form>
+
 {% endblock %}
 
 {% set code = code(_self) %}

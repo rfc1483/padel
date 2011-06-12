@@ -21,6 +21,8 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'leagues' => true,
        'league_manager' => true,
        'create_league' => true,
+       'delete_league' => true,
+       'create_stage' => true,
        'login' => true,
        'logout' => true,
        'login_check' => true,
@@ -105,6 +107,16 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getcreate_leagueRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/create_league/',  ),));
+    }
+
+    private function getdelete_leagueRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\LeaguesController::deleteAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/delete_league',  ),));
+    }
+
+    private function getcreate_stageRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/create_stage',  ),));
     }
 
     private function getloginRouteInfo()

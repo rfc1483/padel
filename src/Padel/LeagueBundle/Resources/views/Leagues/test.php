@@ -1,0 +1,1 @@
+<tr url="../league_manager/{{league.id}}">

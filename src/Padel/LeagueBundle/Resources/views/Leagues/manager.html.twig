@@ -1,8 +1,50 @@
-{% extends "PadelLeagueBundle:Leagues:layout.html.twig" %}
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
 
 {% block content %}
-    <h1>Edit league</h1>
-    Edit or delete league {{ id }}
+    <h1>League manager</h1>
+
+    <form action="{{ path('league_manager', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_widget(form) }}
+        <input type="submit" class="symfony-button-grey" value="SAVE" />
+    </form>
+    <br />
+    <form action="{{ path('delete_league', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        <input type="submit" class="symfony-button-grey" value="DELETE" />
+    </form>
+
+    <br />
+    <h1>Stages</h1>
+    {% if error is empty %}
+        <table id="tablesorter-demo" class="tablesorter"> 
+            <thead> 
+                <tr> 
+                    <th>Number</th> 
+                    <th>Start date</th> 
+                    <th>Finish date</th>
+                    <th>Year</th> 
+                    <th>Status</th>
+                </tr> 
+            </thead> 
+            <tbody> 
+                {% for stage in stages %}               
+                    <tr url="{{ path('league_manager', { 'id': stage.id } ) }}" >
+                        <td>{{ stage.number }}</td>
+                        <td>{{ stage.startDate }}</td>
+                        <td>{{ stage.finishDate }}</td>
+                        <td>{{ stage.year }}</td>
+                        <td>{{ stage.status }}</td>
+                    </tr>
+                {% endfor %}            
+            </tbody> 
+        </table> 
+    {% else %}
+        {{ error }}
+    {% endif %}
+    <br />
+    <br />
+    <ul id="demo-list">
+        <a href="{{ path('create_stage', { 'id': id } ) }}">Create Stage</a> 
+    </ul>
 {% endblock %}
 
 {% set code = code(_self) %}

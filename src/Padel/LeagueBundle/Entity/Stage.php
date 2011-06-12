@@ -20,9 +20,9 @@ class Stage
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      *
-     * @var integer $number
+     * @var string $number
      */
     private $number;
 
@@ -62,7 +62,7 @@ class Stage
      *   @ORM\JoinColumn(name="league_id", referencedColumnName="id")
      * })
      */
-    private $leagueLeague;
+    private $league;
 
     /**
      * Get id
@@ -175,22 +175,22 @@ class Stage
     }
 
     /**
-     * Set leagueLeague
+     * Set league
      *
-     * @param Acme\TableBundle\Entity\League $leagueLeague
+     * @param \Padel\LeagueBundle\Entity\League $league
      */
-    public function setLeagueLeague(\Acme\TableBundle\Entity\League $leagueLeague)
+    public function setLeague(\Padel\LeagueBundle\Entity\League $league)
     {
-        $this->leagueLeague = $leagueLeague;
+        $this->league = $league;
     }
 
     /**
-     * Get leagueLeague
+     * Get league
      *
-     * @return Acme\TableBundle\Entity\League $leagueLeague
+     * @return \Padel\LeagueBundle\Entity\League $league
      */
-    public function getLeagueLeague()
+    public function getLeague()
     {
-        return $this->leagueLeague;
+        return $this->league;
     }
 }
