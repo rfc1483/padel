@@ -19,9 +19,9 @@ class Division
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      *
-     * @var integer $level
+     * @var string $level
      */
     private $level;
 
@@ -46,9 +46,9 @@ class Division
      * @ORM\JoinColumn(name="stage_id", referencedColumnName="id")
      * })
      *
-     * @var Stage
+     * @var stage
      */
-    private $stagesStage;
+    private $stage;
 
     public function __construct()
     {
@@ -69,7 +69,7 @@ class Division
     /**
      * Set level
      *
-     * @param integer $level
+     * @param string $level
      */
     public function setLevel($level)
     {
@@ -79,7 +79,7 @@ class Division
     /**
      * Get level
      *
-     * @return integer $level
+     * @return string $level
      */
     public function getLevel()
     {
@@ -107,22 +107,22 @@ class Division
     }
 
     /**
-     * Set stagesStage
+     * Set stage
      *
-     * @param Acme\TableBundle\Entity\Stage $stagesStage
+     * @param \Padel\LeagueBundle\Entity\Stage $stage
      */
-    public function setStagesStage(\Acme\TableBundle\Entity\Stage $stagesStage)
+    public function setStage(\Padel\LeagueBundle\Entity\Stage $stage)
     {
-        $this->stagesStage = $stagesStage;
+        $this->stage = $stage;
     }
 
     /**
-     * Get stagesStage
+     * Get stage
      *
-     * @return Acme\TableBundle\Entity\Stage $stagesStage
+     * @return \Padel\LeagueBundle\Entity\Stage $stage
      */
-    public function getStagesStage()
+    public function getStage()
     {
-        return $this->stagesStage;
+        return $this->stage;
     }
 }

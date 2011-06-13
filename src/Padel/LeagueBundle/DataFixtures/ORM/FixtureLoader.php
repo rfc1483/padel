@@ -6,6 +6,8 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Padel\LeagueBundle\Entity\User;
 use Padel\LeagueBundle\Entity\Role;
 use Padel\LeagueBundle\Entity\League;
+use Padel\LeagueBundle\Entity\Stage;
+use Padel\LeagueBundle\Entity\Division;
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
 class FixtureLoader implements FixtureInterface {
@@ -80,6 +82,62 @@ class FixtureLoader implements FixtureInterface {
         $league->setStatus("Active");
 
         $manager->persist($league);
+        $manager->flush();
+
+        // Create stages
+        $stage = new Stage();
+        $stage->setNumber("1");
+        $stage->setStartDate("15/5/2011");
+        $stage->setFinishDate("30/5/2011");
+        $stage->setYear("2011");
+        $stage->setStatus("Active");
+        $stage->setLeague($league);
+        
+        $manager->persist($stage);
+        $manager->flush();
+
+        $stage = new Stage();
+        $stage->setNumber("2");
+        $stage->setStartDate("1/6/2011");
+        $stage->setFinishDate("15/6/2011");
+        $stage->setYear("2011");
+        $stage->setStatus("Inactive");
+        $stage->setLeague($league);
+
+        $manager->persist($stage);
+        $manager->flush();
+        
+        $stage = new Stage();
+        $stage->setNumber("3");
+        $stage->setStartDate("15/6/2011");
+        $stage->setFinishDate("30/6/2011");
+        $stage->setYear("2011");
+        $stage->setStatus("Inactive");
+        $stage->setLeague($league);
+        
+        $manager->persist($stage);
+        $manager->flush();       
+        
+        // Create divisions
+        $division = new Division();
+        $division->setLevel("1");
+        $division->setStage($stage);
+        
+        $manager->persist($division);
+        $manager->flush();
+        
+        $division = new Division();
+        $division->setLevel("2");
+        $division->setStage($stage);
+        
+        $manager->persist($division);
+        $manager->flush();
+        
+        $division = new Division();
+        $division->setLevel("3");
+        $division->setStage($stage);
+        
+        $manager->persist($division);
         $manager->flush();
     }
 

@@ -85,7 +85,7 @@ class __TwigTemplate_55b6bfd6a3456ccc1f5d009904e31f1a extends Twig_Template
                 echo "               
                     <tr url=\"";
                 // line 30
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("league_manager", array("id" => $this->getAttribute($this->getContext($context, 'stage'), "id", array(), "any", false))), "html");
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("stage_manager", array("id" => $this->getAttribute($this->getContext($context, 'stage'), "id", array(), "any", false))), "html");
                 echo "\" >
                         <td>";
                 // line 31

@@ -35,4 +35,61 @@ class StagesController extends Controller {
         ));
     }
 
+    public function deleteAction($id) {
+
+        $stage = new Stage();
+        $request = $this->get('request');
+
+        if ($request->getMethod() == 'POST') {
+            $manager = $this->get('doctrine')->getEntityManager();
+            $stage = $manager->getRepository('PadelLeagueBundle:Stage')->findOneById($id);
+            $leagueId = $stage->getLeague()->getId();
+
+            if (!$stage) {
+                throw $this->createNotFoundException('No stage found for id ' . $stage->getId());
+            }
+
+            $manager->remove($stage);
+            $manager->flush();
+            return $this->redirect($this->generateUrl('league_manager', array('id' => $leagueId)));
+        }
+    }
+
+    public function managerAction($id) {
+
+        $stage = new Stage();
+        $manager = $this->get('doctrine')->getEntityManager();
+        $stage = $manager->getRepository('PadelLeagueBundle:Stage')->findOneById($id);
+        $leagueId = $stage->getLeague()->getId();
+
+        $form = $this->get('form.factory')
+                ->create(new StageType(), $stage);
+        $request = $this->get('request');
+
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+            if ($form->isValid()) {
+                $manager->flush();
+                return $this->redirect($this->generateUrl('league_manager', array('id' => $leagueId)));
+            }
+        }
+
+        $divisions = $this->get('doctrine')
+                ->getEntityManager()
+                ->getRepository('PadelLeagueBundle:Division')
+                ->findAll();
+
+        $error = '';
+        if (!$divisions) {
+            $error = "The are no divisions in this stage at the moment.";
+        }
+
+        return $this->render('PadelLeagueBundle:Stages:manager.html.twig', array(
+            'form' => $form->createView(),
+            'id' => $id,
+            'divisions' => $divisions,
+            'error' => $error
+        ));
+    }
+
 }

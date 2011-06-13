@@ -1,0 +1,16 @@
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Stage manager</h1>
+
+    <form action="{{ path('division_manager', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_widget(form) }}
+        <input type="submit" class="symfony-button-grey" value="SAVE" />
+    </form>
+    <br />
+    <form action="{{ path('delete_division', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        <input type="submit" class="symfony-button-grey" value="DELETE" />
+    </form>
+{% endblock %}
+    
+{% set code = code(_self) %}

@@ -1,0 +1,43 @@
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Stage manager</h1>
+
+    <form action="{{ path('stage_manager', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_widget(form) }}
+        <input type="submit" class="symfony-button-grey" value="SAVE" />
+    </form>
+    <br />
+    <form action="{{ path('delete_stage', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
+        <input type="submit" class="symfony-button-grey" value="DELETE" />
+    </form>
+
+    <br />
+    <h1>Divisions</h1>
+    {% if error is empty %}
+        <table id="tablesorter-demo" class="tablesorter"> 
+            <thead> 
+                <tr> 
+                    <th>Level</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                {% for division in divisions %}               
+                    <tr url="{{ path('division_manager', { 'id': division.id } ) }}" >
+                        <td>{{ division.level }}</td>
+                    </tr>
+                {% endfor %}            
+            </tbody> 
+        </table> 
+    {% else %}
+        {{ error }}
+    {% endif %}
+    <br />
+    <br />
+    <ul id="demo-list">
+        <a href="{{ path('create_division', { 'id': id } ) }}">Create Division</a> 
+    </ul>
+{% endblock %}
+
+{% set code = code(_self) %}
+    

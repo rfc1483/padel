@@ -27,7 +27,7 @@
             </thead> 
             <tbody> 
                 {% for stage in stages %}               
-                    <tr url="{{ path('league_manager', { 'id': stage.id } ) }}" >
+                    <tr url="{{ path('stage_manager', { 'id': stage.id } ) }}" >
                         <td>{{ stage.number }}</td>
                         <td>{{ stage.startDate }}</td>
                         <td>{{ stage.finishDate }}</td>

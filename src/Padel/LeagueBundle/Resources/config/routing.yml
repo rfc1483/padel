@@ -38,6 +38,26 @@ create_stage:
   pattern: /create_stage/{id}/
   defaults: { _controller: PadelLeagueBundle:Stages:create }
 
+stage_manager:
+  pattern: /stage_manager/{id}/
+  defaults: { _controller: PadelLeagueBundle:Stages:manager }
+
+delete_stage:
+  pattern: /delete_stage/{id}/
+  defaults: { _controller: PadelLeagueBundle:Stages:delete }
+  
+create_division:
+  pattern: /create_division/{id}/
+  defaults: { _controller: PadelLeagueBundle:Divisions:create }
+
+division_manager:
+  pattern: /division_manager/{id}/
+  defaults: { _controller: PadelLeagueBundle:Divisions:manager }
+
+delete_division:
+  pattern: /delete_division/{id}/
+  defaults: { _controller: PadelLeagueBundle:Divisions:delete }
+
 login:
   pattern: /login/
   defaults: { _controller: PadelLeagueBundle:Default:login }

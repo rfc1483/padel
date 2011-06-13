@@ -104,6 +104,46 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::createAction',)), array('_route' => 'create_stage'));
         }
 
+        // stage_manager
+        if (0 === strpos($pathinfo, '/stage_manager') && preg_match('#^/stage_manager/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'stage_manager');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::managerAction',)), array('_route' => 'stage_manager'));
+        }
+
+        // delete_stage
+        if (0 === strpos($pathinfo, '/delete_stage') && preg_match('#^/delete_stage/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'delete_stage');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::deleteAction',)), array('_route' => 'delete_stage'));
+        }
+
+        // create_division
+        if (0 === strpos($pathinfo, '/create_division') && preg_match('#^/create_division/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'create_division');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::createAction',)), array('_route' => 'create_division'));
+        }
+
+        // division_manager
+        if (0 === strpos($pathinfo, '/division_manager') && preg_match('#^/division_manager/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'division_manager');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::managerAction',)), array('_route' => 'division_manager'));
+        }
+
+        // delete_division
+        if (0 === strpos($pathinfo, '/delete_division') && preg_match('#^/delete_division/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'delete_division');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::deleteAction',)), array('_route' => 'delete_division'));
+        }
+
         // login
         if (rtrim($pathinfo, '/') === '/login') {
             if (substr($pathinfo, -1) !== '/') {

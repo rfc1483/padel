@@ -23,6 +23,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'create_league' => true,
        'delete_league' => true,
        'create_stage' => true,
+       'stage_manager' => true,
+       'delete_stage' => true,
+       'create_division' => true,
+       'division_manager' => true,
+       'delete_division' => true,
        'login' => true,
        'logout' => true,
        'login_check' => true,
@@ -117,6 +122,31 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getcreate_stageRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/create_stage',  ),));
+    }
+
+    private function getstage_managerRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::managerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/stage_manager',  ),));
+    }
+
+    private function getdelete_stageRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\StagesController::deleteAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/delete_stage',  ),));
+    }
+
+    private function getcreate_divisionRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/create_division',  ),));
+    }
+
+    private function getdivision_managerRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::managerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/division_manager',  ),));
+    }
+
+    private function getdelete_divisionRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DivisionsController::deleteAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/delete_division',  ),));
     }
 
     private function getloginRouteInfo()
