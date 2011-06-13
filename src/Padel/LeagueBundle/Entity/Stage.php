@@ -59,7 +59,7 @@ class Stage
      *
      * @var League
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="league_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="league_id", referencedColumnName="id", onDelete="CASCADE")
      * })
      */
     private $league;

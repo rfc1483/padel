@@ -49,7 +49,7 @@ class LeaguesController extends Controller {
         $stages = $this->get('doctrine')
                 ->getEntityManager()
                 ->getRepository('PadelLeagueBundle:Stage')
-                ->findAll();
+                ->findByLeague($league->getId());
 
         $error = '';
         if (!$stages) {

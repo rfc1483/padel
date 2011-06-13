@@ -37,8 +37,3 @@ table.tablesorter thead tr .headerSortDown {
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
     background-color: #8dbdd8;
 }
-
-table.tablesorter tbody tr.active { padding:30px; background-color:blue !important; color:white; cursor: pointer; }
-
-
-

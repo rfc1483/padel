@@ -16,7 +16,7 @@ outcome:
 
 teams:
   pattern: /teams/
-  defaults: { _controller: PadelLeagueBundle:Default:teams }
+  defaults: { _controller: PadelLeagueBundle:Teams:index }
 
 leagues:
   pattern: /leagues/

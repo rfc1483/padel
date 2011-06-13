@@ -46,7 +46,7 @@ class StagesController extends Controller {
             $leagueId = $stage->getLeague()->getId();
 
             if (!$stage) {
-                throw $this->createNotFoundException('No stage found for id ' . $stage->getId());
+                throw $this->createNotFoundException('No division found for id ' . $stage->getId());
             }
 
             $manager->remove($stage);
@@ -77,7 +77,7 @@ class StagesController extends Controller {
         $divisions = $this->get('doctrine')
                 ->getEntityManager()
                 ->getRepository('PadelLeagueBundle:Division')
-                ->findAll();
+                ->findByStage($stage->getId());
 
         $error = '';
         if (!$divisions) {

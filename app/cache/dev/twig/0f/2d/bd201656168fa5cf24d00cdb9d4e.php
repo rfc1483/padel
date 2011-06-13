@@ -26,7 +26,7 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
         <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
         <link rel=\"stylesheet\" href=\"";
         // line 5
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/acmedemo/css/demo.css"), "html");
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/padelleague/css/demo.css"), "html");
         echo "\" type=\"text/css\" media=\"all\" />
         <title>";
         // line 6

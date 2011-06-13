@@ -43,7 +43,7 @@ class Division
     /**
      * @ORM\ManyToOne(targetEntity="Stage")
      * @ORM\JoinColumns({
-     * @ORM\JoinColumn(name="stage_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="stage_id", referencedColumnName="id", onDelete="CASCADE")
      * })
      *
      * @var stage

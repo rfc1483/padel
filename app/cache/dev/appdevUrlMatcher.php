@@ -61,7 +61,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'teams');
             }
-            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::teamsAction',  '_route' => 'teams',);
+            return array (  '_controller' => 'PadelLeagueBundle:Teams:index',  '_route' => 'teams',);
         }
 
         // leagues

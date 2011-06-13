@@ -96,7 +96,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getteamsRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\DefaultController::teamsAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/teams/',  ),));
+        return array(array (), array (  '_controller' => 'PadelLeagueBundle:Teams:index',), array (), array (  0 =>   array (    0 => 'text',    1 => '/teams/',  ),));
     }
 
     private function getleaguesRouteInfo()

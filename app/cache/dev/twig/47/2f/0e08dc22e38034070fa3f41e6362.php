@@ -36,7 +36,7 @@ class __TwigTemplate_472f0e08dc22e38034070fa3f41e6362 extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "    <h1>New stage</h1>
+        echo "    <h1>New division</h1>
     <form action=\"";
         // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("create_stage", array("id" => $this->getContext($context, 'id'))), "html");
