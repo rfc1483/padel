@@ -304,7 +304,7 @@ class Team
      */
     public function setLeague(\Padel\LeagueBundle\Entity\League $league)
     {
-        $this->leagueLeague = $league;
+        $this->league = $league;
     }
 
     /**
