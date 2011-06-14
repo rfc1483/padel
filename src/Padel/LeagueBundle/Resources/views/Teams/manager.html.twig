@@ -1,0 +1,24 @@
+{% extends "PadelLeagueBundle:Default:layout.html.twig" %}
+
+{% block content %}
+    <h1>Select league</h1>
+
+    {% if error is empty %}
+        <table id="tablesorter-demo" class="tablesorter"> 
+            <thead> 
+                <tr> 
+                    <th>Teams</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+            {% for team in teams %}               
+                <tr>
+                    <td>{{ team.name1 }}</td>
+                </tr>
+            {% endfor %}            
+            </tbody> 
+        </table> 
+    {% else %}
+        {{ error }}
+    {% endif %}
+{% endblock %}

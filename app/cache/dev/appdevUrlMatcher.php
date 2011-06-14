@@ -61,7 +61,15 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'teams');
             }
-            return array (  '_controller' => 'PadelLeagueBundle:Teams:index',  '_route' => 'teams',);
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::indexAction',  '_route' => 'teams',);
+        }
+
+        // team_manager
+        if (0 === strpos($pathinfo, '/team_manager') && preg_match('#^/team_manager/(?P<id>[^/]+?)/?$#x', $pathinfo, $matches)) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'team_manager');
+            }
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::managerAction',)), array('_route' => 'team_manager'));
         }
 
         // leagues

@@ -87,9 +87,9 @@ class Team
      * @ORM\JoinColumn(name="league_id", referencedColumnName="id")
      * })
      * 
-     * @var League
+     * @var League $league
      */
-    private $leagueLeague;
+    private $league;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
@@ -99,7 +99,7 @@ class Team
      *
      * @var User
      */
-    private $userUser;
+    private $user;
 
     public function __construct()
     {
@@ -298,42 +298,42 @@ class Team
     }
 
     /**
-     * Set leagueLeague
+     * Set league
      *
-     * @param Acme\TableBundle\Entity\League $leagueLeague
+     * @param \Padel\LeagueBundle\Entity\League $league
      */
-    public function setLeagueLeague(\Acme\TableBundle\Entity\League $leagueLeague)
+    public function setLeague(\Padel\LeagueBundle\Entity\League $league)
     {
-        $this->leagueLeague = $leagueLeague;
+        $this->leagueLeague = $league;
     }
 
     /**
-     * Get leagueLeague
+     * Get league
      *
-     * @return Acme\TableBundle\Entity\League $leagueLeague
+     * @return \Padel\LeagueBundle\Entity\League $league
      */
-    public function getLeagueLeague()
+    public function getLeague()
     {
-        return $this->leagueLeague;
+        return $this->league;
     }
 
     /**
-     * Set userUser
+     * Set user
      *
-     * @param Acme\TableBundle\Entity\User $userUser
+     * @param \Padel\LeagueBundle\Entity\User $user
      */
-    public function setUserUser(\Acme\TableBundle\Entity\User $userUser)
+    public function setUser(\Padel\LeagueBundle\Entity\User $user)
     {
-        $this->userUser = $userUser;
+        $this->user = $user;
     }
 
     /**
-     * Get userUser
+     * Get user
      *
-     * @return Acme\TableBundle\Entity\User $userUser
+     * @return \Padel\LeagueBundle\Entity\User $user
      */
-    public function getUserUser()
+    public function getUser()
     {
-        return $this->userUser;
+        return $this->user;
     }
 }

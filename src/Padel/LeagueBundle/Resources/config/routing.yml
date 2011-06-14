@@ -18,6 +18,10 @@ teams:
   pattern: /teams/
   defaults: { _controller: PadelLeagueBundle:Teams:index }
 
+team_manager:
+  pattern: /team_manager/{id}/
+  defaults: { _controller: PadelLeagueBundle:Teams:manager }
+
 leagues:
   pattern: /leagues/
   defaults: { _controller: PadelLeagueBundle:Leagues:index }

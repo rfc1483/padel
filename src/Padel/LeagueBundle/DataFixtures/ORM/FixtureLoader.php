@@ -139,6 +139,14 @@ class FixtureLoader implements FixtureInterface {
         
         $manager->persist($division);
         $manager->flush();
+        
+        // Create divisions
+        $team = new Team();
+        $team->setName1("Name1");
+        $team->setSurname1($stage);
+        
+        $manager->persist($team);
+        $manager->flush();
     }
 
 }
