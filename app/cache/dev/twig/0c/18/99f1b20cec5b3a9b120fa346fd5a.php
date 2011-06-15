@@ -40,37 +40,46 @@ class __TwigTemplate_0c1899f1b20cec5b3a9b120fa346fd5a extends Twig_Template
         // line 6
         if (twig_test_empty($this->getContext($context, 'error'))) {
             // line 7
-            echo "        <table id=\"tablesorter-demo\" class=\"tablesorter\"> 
+            echo "        <table id=\"tablesorter-teams\" class=\"tablesorter\"> 
             <thead> 
                 <tr> 
                     <th>Teams</th> 
+                    <th>Cars</th>
                 </tr> 
             </thead> 
             <tbody> 
             ";
-            // line 14
+            // line 15
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'teams'));
             foreach ($context['_seq'] as $context['_key'] => $context['team']) {
                 echo "               
                 <tr>
                     <td>";
-                // line 16
+                // line 17
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, 'team'), "name1", array(), "any", false), "html");
                 echo "</td>
+                    <td>                    
+                        <select>
+                          <option value=\"volvo\">Volvo</option>
+                          <option value=\"saab\">Saab</option>
+                          <option value=\"mercedes\">Mercedes</option>
+                          <option value=\"audi\">Audi</option>
+                        </select>
+                    </td>
                 </tr>
             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['team'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 18
+            // line 27
             echo "            
             </tbody> 
         </table> 
     ";
         } else {
-            // line 22
+            // line 31
             echo "        ";
             echo twig_escape_filter($this->env, $this->getContext($context, 'error'), "html");
             echo "

@@ -48,7 +48,7 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
             \$(document).ready(function() 
             { 
                 \$(\"#tablesorter-demo\").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
-                \$(\"#options\").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
+                \$(\"#tablesorter-teams\").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
             }           
         ); 
             \$(document).ready(function()
@@ -118,7 +118,7 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
     // line 6
     public function block_title($context, array $blocks = array())
     {
-        echo "Demo Bundle";
+        echo "Padel";
     }
 
     // line 42

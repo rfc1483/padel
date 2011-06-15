@@ -206,6 +206,48 @@ class FixtureLoader implements FixtureInterface {
         
         $manager->persist($team);
         $manager->flush();
+        
+        // Create teams
+        $team = new Team();
+        $team->setName1("Xandra");
+        $team->setSurname1("Lopez");
+        $team->setPhone1("9863032");
+        $team->setEmail1("lopez@gmail.com");
+        $team->setName2("Paola");
+        $team->setSurname2("Strasser");
+        $team->setPhone2("9863033");
+        $team->setEmail2("strasser@gmail.com");
+        
+        $user = $manager->getRepository('PadelLeagueBundle:User')->findOneByUsername('lopez');
+        $team->setUser($user);
+        $league->setName("League C");
+        $league = $manager->getRepository('PadelLeagueBundle:League')->findOneByName('League C');
+        $team->setLeague($league);
+        $stage->setLeague($league);
+        
+        $manager->persist($team);
+        $manager->flush();
+        
+        // Create teams
+        $team = new Team();
+        $team->setName1("Loreto");
+        $team->setSurname1("Ramos");
+        $team->setPhone1("9863034");
+        $team->setEmail1("lopez@gmail.com");
+        $team->setName2("Carla");
+        $team->setSurname2("Barciela");
+        $team->setPhone2("9863035");
+        $team->setEmail2("strasser@gmail.com");
+        
+        $user = $manager->getRepository('PadelLeagueBundle:User')->findOneByUsername('ramos');
+        $team->setUser($user);
+        $league->setName("League C");
+        $league = $manager->getRepository('PadelLeagueBundle:League')->findOneByName('League C');
+        $team->setLeague($league);
+        $stage->setLeague($league);
+        
+        $manager->persist($team);
+        $manager->flush();
     }
 
 }

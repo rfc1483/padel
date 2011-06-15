@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="{{ asset('bundles/padelleague/css/demo.css') }}" type="text/css" media="all" />
-        <title>{% block title %}Demo Bundle{% endblock %}</title>
+        <title>{% block title %}Padel{% endblock %}</title>
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
                 <script type="text/javascript" src=" {{ asset('bundles/padelleague/js/jquery-1.6.1.js') }}"></script> 
         <script type="text/javascript" src=" {{ asset('bundles/padelleague/js/jquery.tablesorter.js') }}"></script> 
@@ -11,7 +11,7 @@
             $(document).ready(function() 
             { 
                 $("#tablesorter-demo").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
-                $("#options").tablesorter({sortList: [[0,0]], headers: { 3:{sorter: false}, 4:{sorter: false}}});
+                $("#tablesorter-teams").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
             }           
         ); 
             $(document).ready(function()

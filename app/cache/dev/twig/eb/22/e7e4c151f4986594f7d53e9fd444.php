@@ -10,7 +10,6 @@ class __TwigTemplate_eb22e7e4c151f4986594f7d53e9fd444 extends Twig_Template
         parent::__construct($env);
 
         $this->blocks = array(
-            'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -28,61 +27,55 @@ class __TwigTemplate_eb22e7e4c151f4986594f7d53e9fd444 extends Twig_Template
     {
         $context = array_merge($this->env->getGlobals(), $context);
 
-        // line 22
+        // line 20
         $context['code'] = $this->env->getExtension('demo')->getCode($this);
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
 
     // line 3
-    public function block_title($context, array $blocks = array())
-    {
-        echo "Symfony - Demos";
-    }
-
-    // line 5
     public function block_content($context, array $blocks = array())
     {
-        // line 6
+        // line 4
         echo "    <h1>Menu</h1>
     <ul id=\"demo-list\">
         ";
-        // line 8
+        // line 6
         if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
-            // line 9
+            // line 7
             echo "            <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classification"), "html");
             echo "\">Classification</a></li>
             <li><a href=\"";
-            // line 10
+            // line 8
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("outcome"), "html");
             echo "\">Send outcome</a></li>
         ";
         } elseif ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-            // line 12
+            // line 10
             echo "            <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("classification"), "html");
             echo "\">Classification</a></li>
             <li><a href=\"";
-            // line 13
+            // line 11
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("teams"), "html");
             echo "\">Teams</a></li>
             <li><a href=\"";
-            // line 14
+            // line 12
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("leagues"), "html");
             echo "\">Leagues</a></li>
         ";
         } elseif ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_ANONYMOUSLY")) {
-            // line 16
+            // line 14
             echo "            <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("login"), "html");
             echo "\">Login</a></li>
             <li><a href=\"";
-            // line 17
+            // line 15
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("register"), "html");
             echo "\">Sign up</a></li>        
         ";
         }
-        // line 19
+        // line 17
         echo "    </ul>
 ";
     }
