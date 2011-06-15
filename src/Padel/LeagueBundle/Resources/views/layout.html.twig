@@ -12,19 +12,17 @@
             { 
                 $("#tablesorter-demo").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
                 $("#tablesorter-teams").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
-            }           
-        ); 
-            $(document).ready(function()
-            {
-                $("tr").click(function(){
+                $("tr.manager").click(function(){
                     window.location = $(this).attr("url");
                });
               
-                $('tr').css( 'cursor', 'pointer' );
-            });
-
+                $("tr.manager").css( 'cursor', 'pointer' );
+                $( "input.name_field" ).datepicker();
+            }); 
         </script>
         <link href="{{ asset('bundles/padelleague/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link type="text/css" href="{{ asset('bundles/padelleague/css/ui-lightness/jquery-ui-1.8.13.custom.css') }}" rel="Stylesheet" />	
+        <script type="text/javascript" src="{{ asset('bundles/padelleague/js/jquery-ui-1.8.13.custom.min.js') }}"></script>
     </head>
     <body>
         <div id="symfony-wrapper">

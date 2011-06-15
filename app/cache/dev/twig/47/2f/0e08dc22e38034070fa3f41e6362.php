@@ -27,7 +27,7 @@ class __TwigTemplate_472f0e08dc22e38034070fa3f41e6362 extends Twig_Template
     {
         $context = array_merge($this->env->getGlobals(), $context);
 
-        // line 12
+        // line 23
         $context['code'] = $this->env->getExtension('demo')->getCode($this);
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
@@ -45,7 +45,39 @@ class __TwigTemplate_472f0e08dc22e38034070fa3f41e6362 extends Twig_Template
         echo " id=\"login\">
         ";
         // line 6
-        echo $this->env->getExtension('form')->renderWidget($this->getContext($context, 'form'));
+        echo $this->env->getExtension('form')->renderErrors($this->getContext($context, 'form'));
+        echo "
+        <div>
+            ";
+        // line 8
+        echo $this->env->getExtension('form')->renderLabel($this->getAttribute($this->getContext($context, 'form'), "startDate", array(), "any", false));
+        echo "
+            ";
+        // line 9
+        echo $this->env->getExtension('form')->renderErrors($this->getAttribute($this->getContext($context, 'form'), "startDate", array(), "any", false));
+        echo "
+            ";
+        // line 10
+        echo $this->env->getExtension('form')->renderWidget($this->getAttribute($this->getContext($context, 'form'), "startDate", array(), "any", false), array("attr" => array("class" => "name_field")));
+        echo "
+        </div>
+        <div>
+            ";
+        // line 13
+        echo $this->env->getExtension('form')->renderLabel($this->getAttribute($this->getContext($context, 'form'), "finishDate", array(), "any", false));
+        echo "
+            ";
+        // line 14
+        echo $this->env->getExtension('form')->renderErrors($this->getAttribute($this->getContext($context, 'form'), "finishDate", array(), "any", false));
+        echo "
+            ";
+        // line 15
+        echo $this->env->getExtension('form')->renderWidget($this->getAttribute($this->getContext($context, 'form'), "finishDate", array(), "any", false), array("attr" => array("class" => "name_field")));
+        echo "
+        </div>
+        ";
+        // line 17
+        echo $this->env->getExtension('form')->renderRest($this->getContext($context, 'form'));
         echo "
         <input type=\"submit\" class=\"symfony-button-grey\" value=\"REGISTER\" />
     </form>

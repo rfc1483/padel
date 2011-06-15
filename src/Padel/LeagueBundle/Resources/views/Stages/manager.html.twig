@@ -23,7 +23,7 @@
             </thead> 
             <tbody> 
                 {% for division in divisions %}               
-                    <tr url="{{ path('division_manager', { 'id': division.id } ) }}" >
+                    <tr class="manager" url="{{ path('division_manager', { 'id': division.id } ) }}" >
                         <td>{{ division.level }}</td>
                     </tr>
                 {% endfor %}            

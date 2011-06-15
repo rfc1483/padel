@@ -49,22 +49,26 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
             { 
                 \$(\"#tablesorter-demo\").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
                 \$(\"#tablesorter-teams\").tablesorter({sortList:[[0,0]], widgets: ['zebra']});
-            }           
-        ); 
-            \$(document).ready(function()
-            {
-                \$(\"tr\").click(function(){
+                \$(\"tr.manager\").click(function(){
                     window.location = \$(this).attr(\"url\");
                });
               
-                \$('tr').css( 'cursor', 'pointer' );
-            });
-
+                \$(\"tr.manager\").css( 'cursor', 'pointer' );
+                \$( \"input.name_field\" ).datepicker();
+            }); 
         </script>
         <link href=\"";
-        // line 27
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/padelleague/css/style.css"), "html");
         echo "\" rel=\"stylesheet\" type=\"text/css\" />
+        <link type=\"text/css\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/padelleague/css/ui-lightness/jquery-ui-1.8.13.custom.css"), "html");
+        echo "\" rel=\"Stylesheet\" />\t
+        <script type=\"text/javascript\" src=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/padelleague/js/jquery-ui-1.8.13.custom.min.js"), "html");
+        echo "\"></script>
     </head>
     <body>
         <div id=\"symfony-wrapper\">
@@ -72,43 +76,43 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
             </div>
             
             ";
-        // line 34
+        // line 32
         if ($this->getAttribute($this->getAttribute($this->getContext($context, 'app'), "session", array(), "any", false), "flash", array("notice", ), "method", false)) {
-            // line 35
+            // line 33
             echo "            <div class=\"flash-message\">
                 <em>Notice</em>: ";
-            // line 36
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, 'app'), "session", array(), "any", false), "flash", array("notice", ), "method", false), "html");
             echo "
             </div>
             ";
         }
-        // line 39
+        // line 37
         echo "            
             ";
-        // line 40
+        // line 38
         $this->displayBlock('content_header', $context, $blocks);
-        // line 49
+        // line 47
         echo "
             <div class=\"symfony-content\">
                 ";
-        // line 51
+        // line 49
         $this->displayBlock('content', $context, $blocks);
-        // line 53
+        // line 51
         echo "            </div>
 
             ";
-        // line 55
+        // line 53
         if (twig_test_defined("code", $context)) {
-            // line 56
+            // line 54
             echo "            <h2>Code behind this page</h2>
             <div class=\"symfony-content\">";
-            // line 57
+            // line 55
             echo $this->getContext($context, 'code');
             echo "</div>
             ";
         }
-        // line 59
+        // line 57
         echo "        </div>
     </body>
 </html>
@@ -121,35 +125,35 @@ class __TwigTemplate_0f2dbd201656168fa5cf24d00cdb9d4e extends Twig_Template
         echo "Padel";
     }
 
-    // line 42
+    // line 40
     public function block_content_header_more($context, array $blocks = array())
     {
-        // line 43
+        // line 41
         echo "                        <li><a href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("homepage"), "html");
         echo "\">Home</a></li>
                     ";
     }
 
-    // line 40
+    // line 38
     public function block_content_header($context, array $blocks = array())
     {
-        // line 41
+        // line 39
         echo "                <ul id=\"menu\">
                     ";
-        // line 42
+        // line 40
         $this->displayBlock('content_header_more', $context, $blocks);
-        // line 45
+        // line 43
         echo "                </ul>
 
                 <div style=\"clear: both\"></div>
             ";
     }
 
-    // line 51
+    // line 49
     public function block_content($context, array $blocks = array())
     {
-        // line 52
+        // line 50
         echo "                ";
     }
 

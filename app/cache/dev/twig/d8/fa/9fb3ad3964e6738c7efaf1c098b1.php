@@ -79,7 +79,7 @@ class __TwigTemplate_d8fa9fb3ad3964e6738c7efaf1c098b1 extends Twig_Template
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'divisions'));
             foreach ($context['_seq'] as $context['_key'] => $context['division']) {
                 echo "               
-                    <tr url=\"";
+                    <tr class=\"manager\" url=\"";
                 // line 26
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("division_manager", array("id" => $this->getAttribute($this->getContext($context, 'division'), "id", array(), "any", false))), "html");
                 echo "\" >

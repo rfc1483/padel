@@ -3,7 +3,18 @@
 {% block content %}
     <h1>New stage</h1>
     <form action="{{ path('create_stage', { 'id': id } ) }}" method="post" {{ form_enctype(form) }} id="login">
-        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+        <div>
+            {{ form_label(form.startDate) }}
+            {{ form_errors(form.startDate) }}
+            {{ form_widget(form.startDate, { 'attr': {'class': 'name_field'} }) }}
+        </div>
+        <div>
+            {{ form_label(form.finishDate) }}
+            {{ form_errors(form.finishDate) }}
+            {{ form_widget(form.finishDate, { 'attr': {'class': 'name_field'} }) }}
+        </div>
+        {{ form_rest(form) }}
         <input type="submit" class="symfony-button-grey" value="REGISTER" />
     </form>
 

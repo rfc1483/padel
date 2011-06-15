@@ -13,7 +13,7 @@
             </thead> 
             <tbody> 
                 {% for league in leagues %}               
-                    <tr url="{{ path('league_manager', { 'id': league.id } ) }}" >
+                    <tr class="manager" url="{{ path('league_manager', { 'id': league.id } ) }}" >
                         <td>{{ league.name }}</td>
                         <td>{{ league.year }}</td>
                         <td>{{ league.status }}</td>

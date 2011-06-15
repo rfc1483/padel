@@ -56,7 +56,7 @@ class __TwigTemplate_89d478fe246ade51d8ab0619424d7c31 extends Twig_Template
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'leagues'));
             foreach ($context['_seq'] as $context['_key'] => $context['league']) {
                 echo "               
-                    <tr url=\"";
+                    <tr class=\"manager\" url=\"";
                 // line 16
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("league_manager", array("id" => $this->getAttribute($this->getContext($context, 'league'), "id", array(), "any", false))), "html");
                 echo "\" >

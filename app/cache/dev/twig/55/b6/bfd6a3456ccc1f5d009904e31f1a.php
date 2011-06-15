@@ -83,7 +83,7 @@ class __TwigTemplate_55b6bfd6a3456ccc1f5d009904e31f1a extends Twig_Template
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, 'stages'));
             foreach ($context['_seq'] as $context['_key'] => $context['stage']) {
                 echo "               
-                    <tr url=\"";
+                    <tr class=\"manager\" url=\"";
                 // line 30
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("stage_manager", array("id" => $this->getAttribute($this->getContext($context, 'stage'), "id", array(), "any", false))), "html");
                 echo "\" >
