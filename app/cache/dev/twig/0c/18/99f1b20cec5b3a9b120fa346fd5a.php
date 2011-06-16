@@ -85,6 +85,20 @@ class __TwigTemplate_0c1899f1b20cec5b3a9b120fa346fd5a extends Twig_Template
             echo "
     ";
         }
+        // line 33
+        echo "    <form action=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("team_division"), "html");
+        echo "\" id=\"login\" method=\"post\" ";
+        echo $this->env->getExtension('form')->renderEnctype($this->getContext($context, 'form'));
+        echo ">
+    ";
+        // line 34
+        echo $this->env->getExtension('form')->renderWidget($this->getContext($context, 'form'));
+        echo "
+
+    <input type=\"submit\" class=\"symfony-button-grey\" value=\"SAVE\" />
+    </form>
+";
     }
 
     public function getTemplateName()

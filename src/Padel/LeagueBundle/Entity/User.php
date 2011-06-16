@@ -171,4 +171,24 @@ class User implements UserInterface {
         return md5($this->getUsername()) == md5($user->getUsername());
     }
 
+
+    /**
+     * Set createdAt
+     *
+     * @param datetime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * Add userRoles
+     *
+     * @param Padel\LeagueBundle\Entity\Role $userRoles
+     */
+    public function addUserRoles(\Padel\LeagueBundle\Entity\Role $userRoles)
+    {
+        $this->userRoles[] = $userRoles;
+    }
 }

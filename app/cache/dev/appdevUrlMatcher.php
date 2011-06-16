@@ -72,6 +72,14 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::managerAction',)), array('_route' => 'team_manager'));
         }
 
+        // team_division
+        if (rtrim($pathinfo, '/') === '/team_division') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'team_division');
+            }
+            return array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::assignAction',  '_route' => 'team_division',);
+        }
+
         // leagues
         if (rtrim($pathinfo, '/') === '/leagues') {
             if (substr($pathinfo, -1) !== '/') {

@@ -30,4 +30,9 @@
     {% else %}
         {{ error }}
     {% endif %}
+    <form action="{{ path('team_division') }}" id="login" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" class="symfony-button-grey" value="SAVE" />
+    </form>
 {% endblock %}

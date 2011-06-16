@@ -19,6 +19,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'outcome' => true,
        'teams' => true,
        'team_manager' => true,
+       'team_division' => true,
        'leagues' => true,
        'league_manager' => true,
        'create_league' => true,
@@ -103,6 +104,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getteam_managerRouteInfo()
     {
         return array(array (  0 => 'id',), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::managerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/team_manager',  ),));
+    }
+
+    private function getteam_divisionRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Padel\\LeagueBundle\\Controller\\TeamsController::assignAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/team_division/',  ),));
     }
 
     private function getleaguesRouteInfo()

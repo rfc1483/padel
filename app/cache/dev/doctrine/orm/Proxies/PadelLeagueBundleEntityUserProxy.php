@@ -99,6 +99,18 @@ class PadelLeagueBundleEntityUserProxy extends \Padel\LeagueBundle\Entity\User i
         return parent::equals($user);
     }
 
+    public function setCreatedAt($createdAt)
+    {
+        $this->_load();
+        return parent::setCreatedAt($createdAt);
+    }
+
+    public function addUserRoles(\Padel\LeagueBundle\Entity\Role $userRoles)
+    {
+        $this->_load();
+        return parent::addUserRoles($userRoles);
+    }
+
 
     public function __sleep()
     {

@@ -22,6 +22,10 @@ team_manager:
   pattern: /team_manager/{id}/
   defaults: { _controller: PadelLeagueBundle:Teams:manager }
 
+team_division:
+  pattern: /team_division/
+  defaults: { _controller: PadelLeagueBundle:Teams:assign }
+
 leagues:
   pattern: /leagues/
   defaults: { _controller: PadelLeagueBundle:Leagues:index }
