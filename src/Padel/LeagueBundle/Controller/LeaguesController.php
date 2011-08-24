@@ -53,7 +53,7 @@ class LeaguesController extends Controller {
 
         $error = '';
         if (!$stages) {
-            $error = "The are no stages in this league at the moment.";
+            $error = "The are no stages in this league at this moment.";
         }
         
         return $this->render('PadelLeagueBundle:Leagues:manager.html.twig', array(
